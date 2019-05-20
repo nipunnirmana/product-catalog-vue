@@ -1,8 +1,11 @@
 <template>
-  <div class="product-wrapper">
+  <div class="product">
     <span class="img" v-bind:style="{ backgroundImage: `url(${imgSrc})`}"></span>
     <span class="name">{{product.name}}</span>
-    <PrimaryButton class="price" :btnText="`${product.price} LKR`"/>
+    <span class="description">{{product.des}}</span>
+    <span class="price-text">{{product.price|currency}}</span>
+    <PrimaryButton class="price" :btnText="product.price|currency"/>
+    <PrimaryButton class="add-to-cart" :btnText="`ADD TO CART`"/>
   </div>
 </template>
 
@@ -21,27 +24,4 @@ export default {
 </script>
 
 <style>
-.product-wrapper {
-  width: 398px;
-  height: 634px;
-  font-size: 20px;
-  text-align: center;
-}
-.product-wrapper .img {
-  width: 398px;
-  height: 503px;
-  display: inline-block;
-  background-size: cover;
-}
-
-.product-wrapper .name {
-  width: 100%;
-  display: inline-block;
-  font-family: "Helvetica 35 Thin";
-  padding: 20px;
-}
-
-.product-wrapper .price {
-  font-family: "Helvetica Neue Medium";
-}
 </style>
