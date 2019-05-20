@@ -1,7 +1,7 @@
 <template>
   <div class="products-listing-page">
     <div class="product-wrapper" v-for="product in products" v-bind:key="product.id">
-      <router-link to="/product/id">
+      <router-link :to="`product/${product.id}`">
         <Product class="product-listing-page" v-bind:product="product"/>
       </router-link>
     </div>

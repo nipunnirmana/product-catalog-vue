@@ -13,7 +13,7 @@ export default new Router({
       component: ProductListingPage
     },
     {
-      path: '/product/id',
+      path: '/product/:id',
       name: 'productDetailPageRoute',
       component: ProductDetailPage
     }

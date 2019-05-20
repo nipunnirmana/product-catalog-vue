@@ -2,17 +2,7 @@
   <div>
     <div class="product-detail-page">
       <div class="product-wrapper">
-        <Product
-          class="product-detail-page"
-          v-bind:product="{
-        id: 2,
-        name: 'Peaches & Greens Salad',
-        des:
-          'Salads don’t have to be all about the veggies. In this one, fresh, juicy peaches and sweet strawberries play starring roles, supported by crunchy cucumbers and almonds, protein-rich chickpeas, and creamy avocado.',
-        price: 1350,
-        img: 'Peaches-and-Greens-Salad.jpg'
-      }"
-        />
+        <Product class="product-detail-page" :product="product[0]"/>
       </div>
     </div>
   </div>
@@ -24,7 +14,14 @@ import PrimaryButton from "@/components/elements/PrimaryButton";
 
 export default {
   name: "productDetailPage",
-  components: { Product, PrimaryButton }
+  components: { Product, PrimaryButton },
+  data() {
+    return {
+      product: this.$store.state.products.filter(
+        product => product.id == this.$route.params.id
+      )
+    };
+  }
 };
 </script>
 
@@ -38,6 +35,7 @@ export default {
   height: 633px;
   background-size: cover;
   float: left;
+  background-position: 100%;
 }
 
 .product-detail-page .name {
