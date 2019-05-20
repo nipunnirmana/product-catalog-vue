@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # product-catalog
 
 ## Project setup
@@ -37,3 +38,6 @@ yarn run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# product-catalog-vue
+>>>>>>> b58c5d8f7933ca9a818953a0e06d74bf14167c74
