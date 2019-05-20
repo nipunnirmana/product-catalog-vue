@@ -22,6 +22,11 @@ body {
   max-width: 1200px;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
 /* ROUTE TRANSITION */
 
 .fade-enter-active,

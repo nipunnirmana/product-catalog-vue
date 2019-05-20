@@ -4,18 +4,19 @@
       <router-link to="/">
         <div class="page-header-title">Product Catalog - VUE JS</div>
       </router-link>
-      <div class="page-header-cart">CART</div>
+      <router-link to="/cart">
+        <HeaderCart/>
+      </router-link>
     </div>
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
-    </div>-->
   </div>
 </template>
 
 <script>
+import HeaderCart from "@/components/HeaderCart";
+
 export default {
-  name: "pageHeader"
+  name: "pageHeader",
+  components: { HeaderCart }
 };
 </script>
 
@@ -29,10 +30,5 @@ export default {
 .page-header-title {
   display: inline-block;
   width: 75%;
-}
-.page-header-cart {
-  display: inline-block;
-  width: 25%;
-  text-align: right;
 }
 </style>
