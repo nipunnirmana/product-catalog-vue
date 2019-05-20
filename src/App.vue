@@ -2,6 +2,7 @@
   <div id="app">
     <PageHeader/>
     <router-view/>
+    <PageFooter/>
   </div>
 </template>
 
@@ -494,10 +495,11 @@ src: local('Helvetica 96 Black Italic'), url('assets/fonts/HelveticaBlkIt.woff')
 
 <script>
 
-import PageHeader from "@/components/PageHeader"
+import PageHeader from "@/components/PageHeader";
+import PageFooter from "@/components/PageFooter"
 
 export default {
   name: 'app',
-  components :{PageHeader}
+  components :{PageHeader,PageFooter}
 }
 </script>
