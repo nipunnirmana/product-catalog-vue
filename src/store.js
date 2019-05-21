@@ -64,14 +64,12 @@ export default new Vuex.Store({
         }
       })
 
-      if (filteredProduct[0].qty === 0) {
+      if (!filteredProduct.length) {
+        state.cart = [...cart, { id, pName, des, price, img, qty: 1 }]
+      } else if (filteredProduct[0].qty === 0) {
         state.cart = cart.filter(
           (cart, key) => cart.id !== filteredProduct[0].id
         )
-      }
-
-      if (!filteredProduct.length) {
-        state.cart = [...cart, { id, pName, des, price, img, qty: 1 }]
       }
     }
   },

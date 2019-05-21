@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style>
+.cart-wrapper {
+  min-height: 600px;
+}
+
 .cart-wrapper .product-wrapper {
   box-shadow: 4px 8px 10px #e4e4e4;
   width: 67%;
