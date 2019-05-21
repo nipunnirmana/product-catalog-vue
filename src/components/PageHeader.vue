@@ -13,11 +13,13 @@
 
 <script>
 import HeaderCart from "@/components/HeaderCart";
+import { debuglog } from "util";
 
 export default {
   name: "pageHeader",
   components: { HeaderCart },
   mounted() {
+    this.$store.state.products = require("@/assets/data/products.json");
     const localStorageCartData = localStorage.getItem("cartData");
     if (localStorageCartData) {
       this.$store.state.cart = JSON.parse(localStorageCartData);
