@@ -13,10 +13,7 @@ export default {
   name: "headerCart",
   computed: {
     cartCount() {
-      var a = 0;
-      this.$store.state.cart.forEach((val, key) => {
-        a++;
-      });
+      this.$store.state.cart.forEach(element => {});
       return this.$store.state.cart.length;
     }
   },
