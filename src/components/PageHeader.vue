@@ -18,6 +18,10 @@ export default {
   name: "pageHeader",
   components: { HeaderCart },
   mounted() {
+    const localStorageCartData = localStorage.getItem("cartData");
+    if (localStorageCartData) {
+      this.$store.state.cart = JSON.parse(localStorageCartData);
+    }
     this.$store.dispatch("updateCartSummaryData");
   }
 };

@@ -1,11 +1,18 @@
 <template>
   <div class="cart-wrapper">
-    <div class="product-wrapper-outer">
-      <div class="product-wrapper" v-for="product in cart" v-bind:key="product.id">
-        <Product class="product-cart-page" v-bind:product="product"/>
+    <div class="cart-wrapper-inner" v-if="cart.length">
+      <div class="product-wrapper-outer">
+        <div class="product-wrapper" v-for="product in cart" v-bind:key="product.id">
+          <Product class="product-cart-page" v-bind:product="product"/>
+        </div>
       </div>
+      <CartSummary/>
     </div>
-    <CartSummary/>
+
+    <div
+      v-if="!cart.length"
+      class="empty-cart-message"
+    >Empty Cart , Please add Item(s) before Continuing</div>
   </div>
 </template>
 
@@ -77,5 +84,12 @@ export default {
   font-size: 16px;
   margin-left: 239px;
   display: block;
+}
+
+.empty-cart-message {
+  text-align: center;
+  font-size: 60px;
+  color: #d8d8d8;
+  font-family: "Helvetica 35 Thin";
 }
 </style>

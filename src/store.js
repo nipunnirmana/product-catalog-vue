@@ -31,17 +31,7 @@ export default new Vuex.Store({
         img: 'southwest-quinoa-salad.jpg'
       }
     ],
-    cart: [
-      {
-        id: 1,
-        pName: 'Asian Quinoa Power Salad',
-        des:
-          'Delicious vegan and easily gluten free Thai quinoa salad with a perfect crunch. Perfect for meal prep lunches, picnics or parties. This salad is a crowd-pleaser!.',
-        price: 500,
-        img: 'asian-quinoa-power-salad.jpg',
-        qty: 1
-      }
-    ],
+    cart: [],
 
     summaryCartData: {
       cartItemCount: 0,
@@ -70,6 +60,8 @@ export default new Vuex.Store({
           (cart, key) => cart.id !== filteredProduct[0].id
         )
       }
+
+      localStorage.setItem('cartData', JSON.stringify(state.cart))
 
       this.dispatch('updateCartSummaryData')
     },
