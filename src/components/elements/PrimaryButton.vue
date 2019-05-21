@@ -7,13 +7,7 @@
 <script>
 export default {
   name: 'primaryButton',
-  props: ['btnText'],
-  methods: {
-    udpateCart () {
-      alert(0)
-      this.$store.dispatch('udpateCart')
-    }
-  }
+  props: ['btnText']
 }
 </script>
 
