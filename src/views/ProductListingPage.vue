@@ -53,13 +53,4 @@ export default {
 .products-listing-page .price {
   font-family: "Helvetica Neue Medium";
 }
-.products-listing-page .description {
-  display: none;
-}
-.products-listing-page .price-text {
-  display: none;
-}
-.products-listing-page .primaryBtn.add-to-cart {
-  display: none;
-}
 </style>

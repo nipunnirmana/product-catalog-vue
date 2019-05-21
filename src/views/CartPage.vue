@@ -1,11 +1,7 @@
 <template>
   <div class="cart-wrapper">
     <div class="product-wrapper" v-for="product in cart" v-bind:key="product.id">
-      <Product
-        class="product-cart-page"
-        v-bind:product="product"
-        @click.native="udpateCart({ add: false, product })"
-      />
+      <Product class="product-cart-page" v-bind:product="product"/>
     </div>
   </div>
 </template>
@@ -30,48 +26,35 @@ export default {
 </script>
 
 <style>
-.product-cart-page .description {
-  display: none;
-}
-.product-cart-page .primaryBtn.price {
-  display: none;
-}
-.product-cart-page .primaryBtn.add-to-cart {
-  display: none;
-}
 .cart-wrapper .product-wrapper {
   box-shadow: 4px 8px 10px #e4e4e4;
-  width: 60%;
+  width: 67%;
+  height: 110px;
+  margin-bottom: 53px;
 }
 
 .product-cart-page .img {
-  width: 289px;
-  height: 200px;
-  display: inline-block;
+  width: 209px;
+  height: 110px;
   background-size: cover;
+  display: block;
+  background-position: center center;
 }
+
 .product-cart-page .name {
+  display: block;
+  margin-top: -81px;
+  margin-left: 239px;
   font-family: "Helvetica Neue light";
-  font-size: 26px;
-  padding: 0 33px;
-  display: inline-block;
-  position: relative;
-  top: -90px;
+  font-size: 20px;
+  margin-bottom: 4px;
+  width: 300px;
 }
 
 .product-cart-page .price-text {
   font-family: "Helvetica Neue light";
-  font-size: 22px;
-  position: relative;
-  left: 320px;
-  top: -50px;
-  display: inline-block;
-}
-.product-cart-page .qty {
-  position: relative;
-  left: 580px;
-  top: -90px;
-  display: inline-block;
+  font-size: 16px;
+  margin-left: 239px;
+  display: block;
 }
 </style>
-

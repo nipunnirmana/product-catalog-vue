@@ -42,15 +42,6 @@ export default new Vuex.Store({
         qty: 1
       },
       {
-        id: 2,
-        pName: 'Peaches & Greens Salad',
-        des:
-          'Salads don’t have to be all about the veggies. In this one, fresh, juicy peaches and sweet strawberries play starring roles, supported by crunchy cucumbers and almonds, protein-rich chickpeas, and creamy avocado.',
-        price: 1350,
-        img: 'Peaches-and-Greens-Salad.jpg',
-        qty: 1
-      },
-      {
         id: 3,
         pName: 'Southwest Quinoa Salad',
         des:
@@ -66,17 +57,21 @@ export default new Vuex.Store({
       const { add, product } = payload
       const { id, pName, des, price, img } = product
       const cart = state.cart
-      if (add) {
-        const filteredProduct = cart.filter((cart, key) => {
-          if (cart.id === id) {
-            return state.cart[key].qty++
-          }
-        })
-        if (!filteredProduct.length) {
-          state.cart = [...cart, { id, pName, des, price, img, qty: 1 }]
+
+      const filteredProduct = cart.filter((cart, key) => {
+        if (cart.id === id) {
+          return add ? state.cart[key].qty++ : state.cart[key].qty--
         }
-      } else {
-        state.cart = cart.filter((cart, key) => cart.id !== id)
+      })
+
+      if (filteredProduct[0].qty === 0) {
+        state.cart = cart.filter(
+          (cart, key) => cart.id !== filteredProduct[0].id
+        )
+      }
+
+      if (!filteredProduct.length) {
+        state.cart = [...cart, { id, pName, des, price, img, qty: 1 }]
       }
     }
   },

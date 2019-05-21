@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: "pageFooter"
-};
+  name: 'pageFooter'
+}
 </script>
 
 <style>

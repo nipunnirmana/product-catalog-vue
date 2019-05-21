@@ -46,10 +46,6 @@ export default {
   margin-left: 5%;
 }
 
-.product-detail-page .price {
-  display: none;
-}
-
 .product-detail-page .price-text {
   float: left;
   width: 28%;

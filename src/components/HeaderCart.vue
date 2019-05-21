@@ -10,18 +10,18 @@
 
 <script>
 export default {
-  name: "headerCart",
+  name: 'headerCart',
   computed: {
-    cartCount() {
-      return this.$store.state.cart.length;
+    cartCount () {
+      return this.$store.state.cart.length
     }
   },
-  data() {
+  data () {
     return {
-      cartIconSrc: require("@/assets/icons/shopping-bag.svg")
-    };
+      cartIconSrc: require('@/assets/icons/shopping-bag.svg')
+    }
   }
-};
+}
 </script>
 
 <style>
