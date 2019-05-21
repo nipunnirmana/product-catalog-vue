@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="product-detail-page">
-      <div class="product-wrapper" v-if=" product">
-        <Product class="product-detail-page" :product="product[0]"/>
+      <div class="product-wrapper">
+        <Product class="product-detail-page" :product="product[0]" v-if=" product.length"/>
       </div>
     </div>
   </div>
