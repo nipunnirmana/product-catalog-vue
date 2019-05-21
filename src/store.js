@@ -4,6 +4,10 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  /*
+   * Initiate store data with empty values
+   */
+
   state: {
     products: [],
     cart: [],

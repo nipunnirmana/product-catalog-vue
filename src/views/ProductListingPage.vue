@@ -14,11 +14,6 @@ import Product from "@/components/Product";
 export default {
   name: "productListingPage",
   components: { Product },
-  methods: {
-    printOneToConsole() {
-      this.$store.dispatch("setTitle");
-    }
-  },
   computed: {
     products() {
       return this.$store.state.products;

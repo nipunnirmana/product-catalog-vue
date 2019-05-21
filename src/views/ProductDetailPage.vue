@@ -17,6 +17,9 @@ export default {
   components: { Product, PrimaryButton },
   computed: {
     product() {
+      /**
+       * Making sure products has been loaded from .json before showing
+       */
       const products = this.$store.state.products;
       if (products.length) {
         return products.filter(product => product.id == this.$route.params.id);

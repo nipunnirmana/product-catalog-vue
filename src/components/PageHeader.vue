@@ -13,12 +13,15 @@
 
 <script>
 import HeaderCart from "@/components/HeaderCart";
-import { debuglog } from "util";
 
 export default {
   name: "pageHeader",
   components: { HeaderCart },
   mounted() {
+    /**
+     * Fetch data from .json file and update store , fetch cart data from localstorage
+     */
+
     this.$store.state.products = require("@/assets/data/products.json");
     const localStorageCartData = localStorage.getItem("cartData");
     if (localStorageCartData) {
