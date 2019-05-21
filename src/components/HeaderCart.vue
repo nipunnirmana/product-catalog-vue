@@ -1,8 +1,10 @@
 <template>
   <div class="page-header-cart">
-    <span class="cart-price">{{0 | currency}}</span>
+    <span class="cart-price">{{cartTotal | currency}}</span>
     <span class="cart-icon">
-      <span class="cart-count">{{cartCount}}</span>
+      <span class="cart-count">
+        <div class="cart-count-inner">{{cartCount}}</div>
+      </span>
       <img alt="Cart" :src="cartIconSrc">
     </span>
   </div>
@@ -13,8 +15,18 @@ export default {
   name: "headerCart",
   computed: {
     cartCount() {
-      this.$store.state.cart.forEach(element => {});
-      return this.$store.state.cart.length;
+      let cartCount = 0;
+      this.$store.state.cart.forEach((val, key) => {
+        cartCount += val.qty;
+      });
+      return cartCount;
+    },
+    cartTotal() {
+      let cartTotal = 0;
+      this.$store.state.cart.forEach((val, key) => {
+        cartTotal += val.price * val.qty;
+      });
+      return cartTotal;
     }
   },
   data() {
@@ -31,6 +43,7 @@ export default {
   width: 25%;
   text-align: right;
   font-family: "Helvetica Neue Medium";
+  margin-bottom: 50px;
 }
 
 .page-header-cart .cart-price {
@@ -42,12 +55,19 @@ export default {
   background-color: #e84118;
   display: inline-block;
   position: relative;
-  top: 4px;
+  top: -10px;
   left: 18px;
   border-radius: 100%;
   color: #ffffff;
-  padding: 9px 14px;
   font-size: 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.page-header-cart .cart-count-inner {
+  position: relative;
+  top: 6px;
 }
 
 .page-header-cart .cart-icon img {
