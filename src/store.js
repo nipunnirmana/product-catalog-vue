@@ -5,34 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    products: [
-      {
-        id: 1,
-        pName: 'Asian Quinoa Power Salad',
-        des:
-          'Delicious vegan and easily gluten free Thai quinoa salad with a perfect crunch. Perfect for meal prep lunches, picnics or parties. This salad is a crowd-pleaser!.',
-        price: 1750,
-        img: 'asian-quinoa-power-salad.jpg'
-      },
-      {
-        id: 2,
-        pName: 'Peaches & Greens Salad',
-        des:
-          'Salads don’t have to be all about the veggies. In this one, fresh, juicy peaches and sweet strawberries play starring roles, supported by crunchy cucumbers and almonds, protein-rich chickpeas, and creamy avocado.',
-        price: 1350,
-        img: 'Peaches-and-Greens-Salad.jpg'
-      },
-      {
-        id: 3,
-        pName: 'Southwest Quinoa Salad',
-        des:
-          'The perfect Southwest Quinoa Salad for any occasion – meal prep, lunch, dinner, cookout sides, you name it. Tossed in a cilantro chili lime dressing for a delicious flavor boost.',
-        price: 1275,
-        img: 'southwest-quinoa-salad.jpg'
-      }
-    ],
+    products: [],
     cart: [],
-
     summaryCartData: {
       cartItemCount: 0,
       cartSubTotal: 0,
@@ -43,17 +17,22 @@ export default new Vuex.Store({
   },
   mutations: {
     updateCart (state, payload) {
+      /*
+       * Updating cart (Incrementing , decrementing removing and adding news products)
+       */
       const { add, product } = payload
       const { id, pName, des, price, img } = product
       const cart = state.cart
 
       const filteredProduct = cart.filter((cart, key) => {
         if (cart.id === id) {
+          // Increment Decrement Product QTY
           return add ? state.cart[key].qty++ : state.cart[key].qty--
         }
       })
 
       if (!filteredProduct.length) {
+        // Adding new product
         state.cart = [...cart, { id, pName, des, price, img, qty: 1 }]
       } else if (filteredProduct[0].qty === 0) {
         state.cart = cart.filter(
@@ -61,12 +40,20 @@ export default new Vuex.Store({
         )
       }
 
+      /**
+       * Saving cart data into Localstorage to be used on reload
+       */
+
       localStorage.setItem('cartData', JSON.stringify(state.cart))
 
       this.dispatch('updateCartSummaryData')
     },
 
     updateCartSummaryData (state) {
+      /*
+       * Calculating cart data (count,subtotal , discounts , vat & total)
+       */
+
       let cartCount = 0
       let subTotal = 0
       this.state.cart.forEach((val, key) => {

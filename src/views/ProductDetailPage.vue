@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="product-detail-page">
-      <div class="product-wrapper">
+      <div class="product-wrapper" v-if=" product">
         <Product class="product-detail-page" :product="product[0]"/>
       </div>
     </div>
@@ -15,12 +15,13 @@ import PrimaryButton from "@/components/elements/PrimaryButton";
 export default {
   name: "productDetailPage",
   components: { Product, PrimaryButton },
-  data() {
-    return {
-      product: this.$store.state.products.filter(
-        product => product.id == this.$route.params.id
-      )
-    };
+  computed: {
+    product() {
+      const products = this.$store.state.products;
+      if (products.length) {
+        return products.filter(product => product.id == this.$route.params.id);
+      }
+    }
   }
 };
 </script>

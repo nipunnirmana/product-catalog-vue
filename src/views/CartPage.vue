@@ -55,7 +55,7 @@ export default {
 }
 
 .cart-wrapper .product-wrapper {
-  box-shadow: 4px 8px 10px #e4e4e4;
+  box-shadow: 0px 6px 10px #e4e4e4;
   width: 100%;
   height: 110px;
   margin-bottom: 53px;

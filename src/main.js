@@ -5,6 +5,9 @@ import store from './store'
 import VueCurrencyFilter from 'vue-currency-filter'
 
 Vue.config.productionTip = false
+
+// vue-currency-filter used for price formatting
+
 Vue.use(VueCurrencyFilter, {
   symbol: 'LKR',
   thousandsSeparator: ',',
