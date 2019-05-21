@@ -23,23 +23,23 @@
 </template>
 
 <script>
-import PrimaryButton from "@/components/elements/PrimaryButton";
-import QtyButtons from "@/components/QtyButtons";
+import PrimaryButton from '@/components/elements/PrimaryButton'
+import QtyButtons from '@/components/QtyButtons'
 export default {
-  name: "product",
-  props: ["product"],
+  name: 'product',
+  props: ['product'],
   components: { PrimaryButton, QtyButtons },
   methods: {
-    udpateCart(payload) {
-      this.$store.dispatch("udpateCart", payload);
+    udpateCart (payload) {
+      this.$store.dispatch('udpateCart', payload)
     }
   },
-  data() {
+  data () {
     return {
       imgSrc: require(`@/assets/productImages/${this.product.img}`)
-    };
+    }
   }
-};
+}
 </script>
 
 <style>

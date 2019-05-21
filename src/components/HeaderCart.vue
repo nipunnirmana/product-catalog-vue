@@ -12,21 +12,21 @@
 
 <script>
 export default {
-  name: "headerCart",
+  name: 'headerCart',
   computed: {
-    cartCount() {
-      return this.$store.state.summaryCartData.cartItemCount;
+    cartCount () {
+      return this.$store.state.summaryCartData.cartItemCount
     },
-    cartTotal() {
-      return this.$store.state.summaryCartData.cartTotal;
+    cartTotal () {
+      return this.$store.state.summaryCartData.cartTotal
     }
   },
-  data() {
+  data () {
     return {
-      cartIconSrc: require("@/assets/icons/shopping-bag.svg")
-    };
+      cartIconSrc: require('@/assets/icons/shopping-bag.svg')
+    }
   }
-};
+}
 </script>
 
 <style>

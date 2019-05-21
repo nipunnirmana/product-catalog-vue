@@ -12,24 +12,24 @@
 </template>
 
 <script>
-import HeaderCart from "@/components/HeaderCart";
+import HeaderCart from '@/components/HeaderCart'
 
 export default {
-  name: "pageHeader",
+  name: 'pageHeader',
   components: { HeaderCart },
-  mounted() {
+  mounted () {
     /**
      * Fetch data from .json file and update store , fetch cart data from localstorage
      */
 
-    this.$store.state.products = require("@/assets/data/products.json");
-    const localStorageCartData = localStorage.getItem("cartData");
+    this.$store.state.products = require('@/assets/data/products.json')
+    const localStorageCartData = localStorage.getItem('cartData')
     if (localStorageCartData) {
-      this.$store.state.cart = JSON.parse(localStorageCartData);
+      this.$store.state.cart = JSON.parse(localStorageCartData)
     }
-    this.$store.dispatch("updateCartSummaryData");
+    this.$store.dispatch('updateCartSummaryData')
   }
-};
+}
 </script>
 
 <style>

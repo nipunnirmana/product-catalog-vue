@@ -26,16 +26,16 @@
 </template>
 
 <script>
-import PrimaryButton from "@/components/elements/PrimaryButton";
+import PrimaryButton from '@/components/elements/PrimaryButton'
 export default {
-  name: "cartSummary",
+  name: 'cartSummary',
   components: { PrimaryButton },
   computed: {
-    summaryCartData() {
-      return this.$store.state.summaryCartData;
+    summaryCartData () {
+      return this.$store.state.summaryCartData
     }
   }
-};
+}
 </script>
 
 <style>

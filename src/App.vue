@@ -97,11 +97,11 @@ a {
 </style>
 
 <script>
-import PageHeader from "@/components/PageHeader";
-import PageFooter from "@/components/PageFooter";
+import PageHeader from '@/components/PageHeader'
+import PageFooter from '@/components/PageFooter'
 
 export default {
-  name: "app",
+  name: 'app',
   components: { PageHeader, PageFooter }
-};
+}
 </script>

@@ -9,17 +9,17 @@
 </template>
 
 <script>
-import Product from "@/components/Product";
+import Product from '@/components/Product'
 
 export default {
-  name: "productListingPage",
+  name: 'productListingPage',
   components: { Product },
   computed: {
-    products() {
-      return this.$store.state.products;
+    products () {
+      return this.$store.state.products
     }
   }
-};
+}
 </script>
 
 <style>

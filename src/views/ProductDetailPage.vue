@@ -9,24 +9,26 @@
 </template>
 
 <script>
-import Product from "@/components/Product";
-import PrimaryButton from "@/components/elements/PrimaryButton";
+import Product from '@/components/Product'
 
 export default {
-  name: "productDetailPage",
-  components: { Product, PrimaryButton },
+  name: 'productDetailPage',
+  components: { Product },
   computed: {
-    product() {
+    product () {
       /**
        * Making sure products has been loaded from .json before showing
        */
-      const products = this.$store.state.products;
+      let products = this.$store.state.products
       if (products.length) {
-        return products.filter(product => product.id == this.$route.params.id);
+        products = products.filter(product => product.id === parseInt(this.$route.params.id))
+      } else {
+        products = []
       }
+      return products
     }
   }
-};
+}
 </script>
 
 <style>

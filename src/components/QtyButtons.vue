@@ -22,20 +22,20 @@
 
 <script>
 export default {
-  name: "qtyButtons",
-  props: ["product"],
+  name: 'qtyButtons',
+  props: ['product'],
   methods: {
-    udpateCart(payload) {
-      this.$store.dispatch("udpateCart", payload);
+    udpateCart (payload) {
+      this.$store.dispatch('udpateCart', payload)
     }
   },
-  data() {
+  data () {
     return {
-      minusBtnSrc: require("@/assets/icons/minus.svg"),
-      plusBtnSrc: require("@/assets/icons/plus.svg")
-    };
+      minusBtnSrc: require('@/assets/icons/minus.svg'),
+      plusBtnSrc: require('@/assets/icons/plus.svg')
+    }
   }
-};
+}
 </script>
 
 <style>

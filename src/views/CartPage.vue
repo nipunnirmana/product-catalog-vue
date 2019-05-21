@@ -17,23 +17,23 @@
 </template>
 
 <script>
-import Product from "@/components/Product";
-import CartSummary from "@/components/CartSummary";
+import Product from '@/components/Product'
+import CartSummary from '@/components/CartSummary'
 
 export default {
-  name: "cartPage",
+  name: 'cartPage',
   components: { Product, CartSummary },
   methods: {
-    udpateCart(payload) {
-      this.$store.dispatch("udpateCart", payload);
+    udpateCart (payload) {
+      this.$store.dispatch('udpateCart', payload)
     }
   },
   computed: {
-    cart() {
-      return this.$store.state.cart;
+    cart () {
+      return this.$store.state.cart
     }
   }
-};
+}
 </script>
 
 <style>
