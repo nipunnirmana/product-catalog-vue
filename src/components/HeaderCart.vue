@@ -15,18 +15,10 @@ export default {
   name: "headerCart",
   computed: {
     cartCount() {
-      let cartCount = 0;
-      this.$store.state.cart.forEach((val, key) => {
-        cartCount += val.qty;
-      });
-      return cartCount;
+      return this.$store.state.summaryCartData.cartItemCount;
     },
     cartTotal() {
-      let cartTotal = 0;
-      this.$store.state.cart.forEach((val, key) => {
-        cartTotal += val.price * val.qty;
-      });
-      return cartTotal;
+      return this.$store.state.summaryCartData.cartTotal;
     }
   },
   data() {

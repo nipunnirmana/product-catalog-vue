@@ -16,7 +16,10 @@ import HeaderCart from "@/components/HeaderCart";
 
 export default {
   name: "pageHeader",
-  components: { HeaderCart }
+  components: { HeaderCart },
+  mounted() {
+    this.$store.dispatch("updateCartSummaryData");
+  }
 };
 </script>
 

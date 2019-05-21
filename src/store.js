@@ -37,20 +37,19 @@ export default new Vuex.Store({
         pName: 'Asian Quinoa Power Salad',
         des:
           'Delicious vegan and easily gluten free Thai quinoa salad with a perfect crunch. Perfect for meal prep lunches, picnics or parties. This salad is a crowd-pleaser!.',
-        price: 1750,
+        price: 500,
         img: 'asian-quinoa-power-salad.jpg',
         qty: 1
-      },
-      {
-        id: 3,
-        pName: 'Southwest Quinoa Salad',
-        des:
-          'The perfect Southwest Quinoa Salad for any occasion – meal prep, lunch, dinner, cookout sides, you name it. Tossed in a cilantro chili lime dressing for a delicious flavor boost.',
-        price: 1275,
-        img: 'southwest-quinoa-salad.jpg',
-        qty: 1
       }
-    ]
+    ],
+
+    summaryCartData: {
+      cartItemCount: 0,
+      cartSubTotal: 0,
+      cartDiscount: 0,
+      cartVat: 0,
+      cartTotal: 0
+    }
   },
   mutations: {
     updateCart (state, payload) {
@@ -71,11 +70,41 @@ export default new Vuex.Store({
           (cart, key) => cart.id !== filteredProduct[0].id
         )
       }
+
+      this.dispatch('updateCartSummaryData')
+    },
+
+    updateCartSummaryData (state) {
+      let cartCount = 0
+      let subTotal = 0
+      this.state.cart.forEach((val, key) => {
+        cartCount += val.qty
+        subTotal += val.price * val.qty
+      })
+
+      const cartItemCount = cartCount
+      const cartSubTotal = subTotal
+      const cartDiscount =
+        (cartSubTotal * (Math.floor(cartSubTotal / 500) * 2)) / 100
+      const cartVat = (cartSubTotal - cartDiscount) * 0.12
+      const cartTotal = cartSubTotal - cartDiscount + cartVat
+
+      state.summaryCartData = {
+        cartItemCount,
+        cartSubTotal,
+        cartDiscount,
+        cartVat,
+        cartTotal
+      }
     }
   },
   actions: {
     udpateCart (state, payload) {
       this.commit('updateCart', payload)
+    },
+
+    updateCartSummaryData (state) {
+      this.commit('updateCartSummaryData')
     }
   }
 })

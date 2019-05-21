@@ -4,19 +4,19 @@
       <li class="summary-item summary-title">Cart Summary</li>
       <li class="summary-item">
         <div class="cart-summary-title">Sub Total</div>
-        <div class="cart-summary-value">4,375 LKR</div>
+        <div class="cart-summary-value">{{summaryCartData.cartSubTotal | currency}}</div>
       </li>
       <li class="summary-item">
         <div class="cart-summary-title">Discount</div>
-        <div class="cart-summary-value">- 100 LKR</div>
+        <div class="cart-summary-value">{{summaryCartData.cartDiscount | currency}}</div>
       </li>
       <li class="summary-item">
         <div class="cart-summary-title">VAT (12%)</div>
-        <div class="cart-summary-value">525 LKR</div>
+        <div class="cart-summary-value">{{summaryCartData.cartVat | currency}}</div>
       </li>
       <li class="summary-item">
         <div class="cart-summary-title">Order Total</div>
-        <div class="cart-summary-value">4,800 LKR</div>
+        <div class="cart-summary-value">{{summaryCartData.cartTotal | currency}}</div>
       </li>
       <li class="summary-item cart-checkout-btn-wrapper">
         <PrimaryButton :btnText="`QUICK CHECKOUT`"/>
@@ -29,7 +29,12 @@
 import PrimaryButton from "@/components/elements/PrimaryButton";
 export default {
   name: "cartSummary",
-  components: { PrimaryButton }
+  components: { PrimaryButton },
+  computed: {
+    summaryCartData() {
+      return this.$store.state.summaryCartData;
+    }
+  }
 };
 </script>
 
@@ -44,13 +49,14 @@ export default {
 }
 
 .cart-summary-title {
-  width: 50%;
+  width: 100%;
   display: inline-block;
   text-align: left;
+  font-size: 26px;
 }
 
 .cart-summary-value {
-  width: 50%;
+  width: 100%;
   display: inline-block;
   text-align: right;
 }
@@ -63,6 +69,6 @@ export default {
 }
 
 .summary-item {
-  padding: 42px 0 0 0;
+  padding: 15px 0 0 0;
 }
 </style>
