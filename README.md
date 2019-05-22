@@ -1,47 +1,41 @@
-# product-catalog
+# Product Catalog Demo - Vue JS
 
-## Project setup
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-```
-yarn install
-```
+Product Catalog page which run on top of VUEX (Based on Vue CLI - vue v 3.7.0)
 
-### Compiles and hot-reloads for development
+# Features
 
-```
-yarn run serve
-```
+- Allowing user to add/remove cart items
+- View products on a separeted Page
+- Saving cart data into Localstorage
 
-### Compiles and minifies for production
+### Prerequisite
 
-```
-yarn run build
-```
+- Node (Tested on node v11.6.0)
 
-### Run your tests
+### Installation
 
-```
-yarn run test
+```sh
+$ git clone or download the project & Change directory (CD) into the project directory
+$ npm install
+$ npm run serve
 ```
 
-### Lints and fixes files
+### Testing
 
-```
-yarn run lint
-```
+##### Eslint
 
-### Run your end-to-end tests
+#
 
-```
-yarn run test:e2e
+```sh
+$ npm run lint
 ```
 
-### Run your unit tests
+##### Jest Unit testing
 
+#
+
+```sh
+$ npm run test:unit
 ```
-yarn run test:unit
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
