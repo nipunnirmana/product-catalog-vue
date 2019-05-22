@@ -4,6 +4,11 @@
       "desiredCapabilities": {
         "browserName": "chrome",
         "javascriptEnabled": true
+      },
+      "globals": {
+        "productListingPath": "/",
+        "productDetailPath": "product/1",
+        "cartPagePath": "/cart"
       }
     }
   }

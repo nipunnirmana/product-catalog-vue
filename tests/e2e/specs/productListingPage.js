@@ -1,4 +1,5 @@
 module.exports = {
+  '@tags': ['productListingPage'],
   'Testing 3 Products Loading into product listing page': browser => {
     browser
       .url(process.env.VUE_DEV_SERVER_URL)
