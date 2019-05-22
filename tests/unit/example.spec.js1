@@ -1,9 +1,0 @@
-import { shallowMount } from '@vue/test-utils'
-import Home from '@/views/Home'
-
-it('NEEDS TO PRINT 1', () => {
-  const Wrapper = shallowMount(Home)
-  expect(1).toBe(1)
-})
-
-
