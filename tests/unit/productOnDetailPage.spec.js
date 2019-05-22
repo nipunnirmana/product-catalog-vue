@@ -7,7 +7,7 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 localVue.use(VueCurrencyFilter)
 
-describe('Loading Product Comphonent with Route name as productDetailPageRoute ', () => {
+describe('Loading Product Component with Route name as productDetailPageRoute ', () => {
   let store
   beforeEach(() => {
     store = new Vuex.Store()
