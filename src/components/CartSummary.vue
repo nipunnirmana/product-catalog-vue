@@ -4,19 +4,19 @@
       <li class="summary-item summary-title">Cart Summary</li>
       <li class="summary-item">
         <div class="cart-summary-title">Sub Total</div>
-        <div class="cart-summary-value">{{summaryCartData.cartSubTotal | currency}}</div>
+        <div class="cart-summary-value sub-total">{{summaryCartData.cartSubTotal | currency}}</div>
       </li>
       <li class="summary-item">
         <div class="cart-summary-title">Discount</div>
-        <div class="cart-summary-value">{{summaryCartData.cartDiscount | currency}}</div>
+        <div class="cart-summary-value discount">{{summaryCartData.cartDiscount | currency}}</div>
       </li>
       <li class="summary-item">
         <div class="cart-summary-title">VAT (12%)</div>
-        <div class="cart-summary-value">{{summaryCartData.cartVat | currency}}</div>
+        <div class="cart-summary-value vat">{{summaryCartData.cartVat | currency}}</div>
       </li>
       <li class="summary-item">
         <div class="cart-summary-title">Order Total</div>
-        <div class="cart-summary-value">{{summaryCartData.cartTotal | currency}}</div>
+        <div class="cart-summary-value total">{{summaryCartData.cartTotal | currency}}</div>
       </li>
       <li class="summary-item cart-checkout-btn-wrapper">
         <PrimaryButton :btnText="`QUICK CHECKOUT`"/>
