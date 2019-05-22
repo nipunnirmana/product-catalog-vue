@@ -15,7 +15,7 @@ Product Catalog page which run on top of VUEX (Based on Vue CLI - vue v 3.7.0)
 ### Installation
 
 ```sh
-$ git clone or download the project & Change directory (CD) into the project directory
+$ git clone or download the project and Change directory (CD) into the project directory
 $ npm install
 $ npm run serve
 ```
@@ -24,23 +24,17 @@ $ npm run serve
 
 ##### Eslint
 
-#
-
 ```sh
 $ npm run lint
 ```
 
 ##### Jest Unit testing
 
-#
-
 ```sh
 $ npm run test:unit
 ```
 
 ##### Nightwatch e2e testing
-
-#
 
 ```sh
 $ npm run test:e2e

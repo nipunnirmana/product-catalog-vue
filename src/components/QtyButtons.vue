@@ -58,10 +58,12 @@ export default {
 
 .qty-plus-btn-wrapper {
   float: left;
+  cursor: pointer;
 }
 
 .qty-minus-btn-wrapper {
   float: left;
+  cursor: pointer;
 }
 .qty-btns-wrapper .qty {
   float: left;
