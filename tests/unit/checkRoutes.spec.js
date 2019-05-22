@@ -5,7 +5,7 @@ import Vuex from 'vuex'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-describe('Route Test home page', () => {
+describe('Route Testing home page', () => {
   let store
   beforeEach(() => {
     store = new Vuex.Store()

@@ -14,7 +14,7 @@ localVue.use(VueCurrencyFilter, {
   symbolSpacing: true
 })
 
-describe('Header Cart - Testing Data', () => {
+describe('Header Cart - Testing With Data', () => {
   let store
   beforeEach(() => {
     store = new Vuex.Store()
