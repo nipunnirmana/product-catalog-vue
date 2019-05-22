@@ -8,6 +8,7 @@
       "globals": {
         "productListingPath": "/",
         "productDetailPath": "product/1",
+        "productTwoDetailPath": "product/2",
         "cartPagePath": "cart"
       }
     }
