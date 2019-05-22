@@ -1,7 +1,5 @@
 # Product Catalog Demo - Vue JS
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 Product Catalog page which run on top of VUEX (Based on Vue CLI - vue v 3.7.0)
 
 # Features
@@ -40,7 +38,7 @@ $ npm run lint
 $ npm run test:unit
 ```
 
-##### Jest Unit testing
+##### Nightwatch e2e testing
 
 #
 
