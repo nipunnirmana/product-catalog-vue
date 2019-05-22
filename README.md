@@ -40,6 +40,10 @@ $ npm run lint
 $ npm run test:unit
 ```
 
-# Features
+##### Jest Unit testing
 
-All Mockups has been done using Adobe XD
+#
+
+```sh
+$ npm run test:e2e
+```
